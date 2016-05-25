@@ -15,14 +15,17 @@ app.use(webpackDevMiddleware(compiler, {
 }));
 
 app.use(webpackHotMiddleware(compiler, {
-  log: console.log
+  //log: console.log
 }))
 
+app.use(express.static('public'));
+
+
 app.get('/', function(request, response) {
-  response.sendFile(__dirname + '/index.html');
+  response.sendFile(__dirname + '/public/index.html');
 })
 
-app.use(express.static(__dirname));
+
 app.listen(3788, function() {
   console.log("Listening on " + 3788);
 })
