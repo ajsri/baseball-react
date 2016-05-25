@@ -21,7 +21,7 @@ app.use(webpackHotMiddleware(compiler, {
 app.use(express.static('public'));
 
 
-app.get('/', function(request, response) {
+app.get('/*', function(request, response) {
   response.sendFile(__dirname + '/public/index.html');
 })
 

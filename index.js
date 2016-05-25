@@ -1,16 +1,40 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import { Router, Route, hashHistory, Link } from 'react-router'
 
-class App extends Component {
+class Main extends Component {
   constructor(props){
     super(props);
   }
 
   render() {
     return (
-      <div>Loading</div>
+      <div>
+        <ul>
+          <li><Link to="/patterns">Patterns</Link></li>
+        </ul>
+      </div>
     )
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('cyclops-react'));
+class Patterns extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <ul>
+          <li><Link to="/">Main</Link></li>
+        </ul>
+      </div>
+    )
+  }
+}
+
+ReactDOM.render(<Router history={hashHistory}>
+                  <Route path="/" component={Main} />
+                  <Route path="/patterns" component={Patterns} />
+                </Router>, document.getElementById('cyclops-react'));
