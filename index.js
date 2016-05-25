@@ -7,11 +7,16 @@ import { Provider } from 'react-redux'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import { Router, Route, hashHistory, Link } from 'react-router'
 
+import cyclops from './reducers'
 import Patterns from './containers/Patterns'
+
+
+let store = createStore(cyclops);
 
 class Main extends Component {
   constructor(props){
     super(props);
+    console.log(this);
   }
 
   render() {
@@ -26,8 +31,9 @@ class Main extends Component {
 }
 
 
-
-ReactDOM.render(<Router history={hashHistory}>
-                  <Route path="/" component={Main} />
-                  <Route path="/patterns" component={Patterns} />
-                </Router>, document.getElementById('cyclops-react'));
+ReactDOM.render(<Provider store={store}>
+                  <Router history={hashHistory}>
+                    <Route path="/" component={Main} />
+                    <Route path="/patterns" component={Patterns} />
+                  </Router>
+                </Provider>, document.getElementById('cyclops-react'));
