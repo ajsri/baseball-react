@@ -7,18 +7,23 @@ import { Provider } from 'react-redux'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import { Router, Route, hashHistory, Link } from 'react-router'
 
+import createLogger from 'redux-logger'
+
 import cyclops from './reducers'
 import Patterns from './containers/Patterns'
 
-
-let store = createStore(cyclops);
+const logger = createLogger();
+const store = createStore(cyclops,
+                        applyMiddleware(logger));
 
 class Main extends Component {
   constructor(props){
     super(props);
-    console.log(this);
   }
 
+  componentDidMount() {
+  }
+  
   render() {
     return (
       <div>

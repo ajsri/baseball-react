@@ -11,6 +11,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return { 
     sampleAction: () => {
+      console.log("sample action");
       dispatch(sampleAction());
     }
   }

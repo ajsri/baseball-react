@@ -6,6 +6,11 @@ class Pattern extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    console.log(this.props);
+    this.props.sampleAction();
+
+  }
   render() {
     return (
       <div>
