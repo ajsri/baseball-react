@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
-import patterns from './patterns'
 
-const cyclops = combineReducers({
-  patterns,
+const mainReducer = combineReducers({
   routing: routerReducer
 })
 
-export default cyclops
+export default mainReducer
