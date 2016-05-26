@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 
 import Navbar from './navbar/navbar'
+import Toggle from './ui/toggle'
 
 class Pattern extends Component {
   constructor(props) {
@@ -16,9 +17,6 @@ class Pattern extends Component {
     return (
       <div>
         <Navbar />
-        <ul>
-          <li><Link to="/">Main test</Link></li>
-        </ul>
       </div>
     )
   }
