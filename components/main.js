@@ -13,14 +13,7 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <h1>Header 1</h1>
-        <h2>Header 1</h2>
-        <h3>Header 1</h3>
-        <h4>Header 1</h4>
-        <div>
-          <p>Paragraph</p>
-          <span>Span</span>
-        </div>
+
       </div>
     )
   }

@@ -8,12 +8,11 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-const mapStateToDispatch = (state, ownProps) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-
   }
 }
 
-const MainApp = connect(mapDispatchToProps, mapStateToDispatch)(Main)
+const MainApp = connect(mapStateToProps, mapDispatchToProps)(Main)
 
 export default MainApp
