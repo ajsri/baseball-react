@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 
+import Navbar from './navbar/navbar'
 
 class Main extends Component {
   constructor(props){
@@ -13,8 +14,9 @@ class Main extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <ul>
-          <li><Link to="/patterns">Patterns</Link></li>
+          <li><Link to="/grid">Patterns</Link></li>
         </ul>
       </div>
     )
