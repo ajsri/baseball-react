@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
-import { main } from './main'
+import { gameday } from './gameday'
 
 const mainReducer = combineReducers({
-  main: main,
+  gameday,
   routing: routerReducer
 })
 

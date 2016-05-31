@@ -5,13 +5,14 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
-import { Router, Route, hashHistory, Link } from 'react-router'
+import { Router, Route, hashHistory, Link, IndexRoute } from 'react-router'
 
 import createLogger from 'redux-logger'
 import thunk from 'redux-thunk'
 
 import mainReducer from './reducers'
 import Main from './containers/Main'
+import Gameday from './containers/Gameday'
 
 const logger = createLogger();
 const store = createStore(mainReducer,
@@ -22,6 +23,7 @@ const store = createStore(mainReducer,
 
 ReactDOM.render(<Provider store={store}>
                   <Router history={hashHistory}>
-                    <Route path="/" component={Main} />
+                    <Route path="/" component={Gameday} />
+                    <Route path="/g" component={Main} />
                   </Router>
                 </Provider>, document.getElementById('razgriz'));
