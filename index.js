@@ -15,8 +15,7 @@ import Main from './containers/Main'
 
 const logger = createLogger();
 const store = createStore(mainReducer,
-                applyMiddleware(thunk),
-                applyMiddleware(logger));
+                applyMiddleware(thunk, logger));
 
 
 

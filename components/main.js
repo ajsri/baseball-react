@@ -11,9 +11,13 @@ class Main extends Component {
   }
 
   render() {
+    let { main } = this.props;
     return (
-      <div>
-
+      <div onClick={this.props.sampleActionAsync.bind(this)}>
+        <button className="btn btn-primary">Click me</button>
+        {main && main.action_sent &&
+          <div>Congrats, you clicked the button</div>
+        }
       </div>
     )
   }
