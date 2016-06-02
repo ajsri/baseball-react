@@ -3,6 +3,7 @@ h1, h2, h3, h4, div, span, p {
 }
 
 .game-list {
+  margin-top: 24px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -10,6 +11,16 @@ h1, h2, h3, h4, div, span, p {
 .game-box{
   width: 33%;
   text-align: center;
+  margin-bottom: 24px;
+}
+
+.team-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.team-image{
+
 }
 
 .linescore-container {
@@ -24,4 +35,16 @@ h1, h2, h3, h4, div, span, p {
 
 .linescore-inning > div:nth-child(2), .linescore-inning > div:first-child {
   border-bottom: 1px solid black;
+}
+
+@media (max-width: 1200px) {
+  .game-box{
+    width: 50%;
+  }
+}
+
+@media (max-width: 780px) {
+  .game-box{
+    width: 100%;
+  }
 }
