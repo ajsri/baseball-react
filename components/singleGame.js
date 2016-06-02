@@ -33,6 +33,11 @@ class singleGame extends Component {
         {game &&
           <div className="container">
             <div className="row">
+              <div className="col-md-12">
+                <Link to="/">Back to Main Page</Link>
+              </div>
+            </div>
+            <div className="row">
               <div className="col-md-12 game-list">
                 <p>{game.away_team_city} ({game.away_win} - {game.away_loss}) vs {game.home_team_city} ({game.home_win}-{game.home_loss})</p>
               </div>
