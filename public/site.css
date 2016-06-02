@@ -1,3 +1,27 @@
 h1, h2, h3, h4, div, span, p {
   font-family: 'Open Sans';
 }
+
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.game-box{
+  width: 33%;
+  text-align: center;
+}
+
+.linescore-container {
+  display: flex;
+}
+
+.linescore-inning {
+  text-align: center;
+  border: 1px solid black;
+  width: 8%;
+}
+
+.linescore-inning > div:nth-child(2), .linescore-inning > div:first-child {
+  border-bottom: 1px solid black;
+}

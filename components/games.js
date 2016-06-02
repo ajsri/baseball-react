@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { Link, browserHistory } from 'react-router'
 
 
 class Games extends Component {
@@ -8,18 +8,30 @@ class Games extends Component {
   }
 
   componentDidMount() {
-    this.props.getGameday();
+    if(!this.props.gameday){
+      this.props.getGameday();
+    }
   }
 
   render() {
-    let { gameday } = this.props
+    let { gameday } = this.props;
     return (
-      <div>
-        {gameday && gameday.games && gameday.games.map((game, i) => {
-          return (
-            <div>{game.away_team_city} @ {game.home_team_city}</div>
-          )
-        })}
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="game-list">
+              {gameday && gameday.games && gameday.games.map((game, i = 0) => {
+                return (
+                  <div key={i} className="game-box">
+                    <Link to={`/game/${i}`}>
+                      {game.away_team_city} @ {game.home_team_city}
+                    </Link>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

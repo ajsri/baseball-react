@@ -11,8 +11,10 @@ import createLogger from 'redux-logger'
 import thunk from 'redux-thunk'
 
 import mainReducer from './reducers'
+
 import Main from './containers/Main'
 import Gameday from './containers/Gameday'
+import Game from './containers/Game'
 
 const logger = createLogger();
 const store = createStore(mainReducer,
@@ -20,10 +22,10 @@ const store = createStore(mainReducer,
 
 
 
-
 ReactDOM.render(<Provider store={store}>
                   <Router history={hashHistory}>
                     <Route path="/" component={Gameday} />
+                    <Route path="/game/:id" component={Game} />
                     <Route path="/g" component={Main} />
                   </Router>
-                </Provider>, document.getElementById('razgriz'));
+                </Provider>, document.getElementById('gameday'));
